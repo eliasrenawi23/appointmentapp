@@ -32,17 +32,17 @@ const Navbar = () => {
 
                 <div className='hidden sm:flex'>
                     <ul className='hidden sm:flex'>
+                        <Link href='/MakeAppointment'>
+                            <li className='ml-10 uppercase hover:border-b text-xl'>schedule an appointment</li>
+                        </Link>
+                        <Link href='/Analytics'>
+                            <li className='ml-10 uppercase hover:border-b text-xl'>Analytics</li>
+                        </Link>
                         <Link href='/about'>
                             <li className='ml-10 uppercase hover:border-b text-xl'>Why Us</li>
                         </Link>
-                        <Link href='/contact'>
-                            <li className='ml-10 uppercase hover:border-b text-xl'>Contact Us</li>
-                        </Link>
-                        <Link href='/services'>
-                            <li className='ml-10 uppercase hover:border-b text-xl'>Our Services</li>
-                        </Link>
-                        <Link href='/blog'>
-                            <li className='ml-10 uppercase hover:border-b text-xl'>Blog</li>
+                        <Link href='/Login'>
+                            <li className='ml-10 uppercase hover:border-b text-xl'>login</li>
                         </Link>
                     </ul>
                 </div>
@@ -62,25 +62,25 @@ const Navbar = () => {
                 </div>
                 <div className='flex-col py-4'>
                     <ul>
+                        <Link href='/MakeAppointment'>
+                            <li
+                                onClick={() => setMenuOpen(false)}
+                                className='py-4 hover:border-b cursor-pointer'>Schedule an Appointment</li>
+                        </Link>
+                        <Link href='/Analytics'>
+                            <li
+                                onClick={() => setMenuOpen(false)}
+                                className='py-4 hover:border-b cursor-pointer'>Analytics</li>
+                        </Link>
                         <Link href='/about'>
                             <li
                                 onClick={() => setMenuOpen(false)}
                                 className='py-4 hover:border-b cursor-pointer'>Why Us</li>
                         </Link>
-                        <Link href='/contact'>
+                        <Link href='/Login'>
                             <li
                                 onClick={() => setMenuOpen(false)}
-                                className='py-4 hover:border-b cursor-pointer'>Contact Us</li>
-                        </Link>
-                        <Link href='/services'>
-                            <li
-                                onClick={() => setMenuOpen(false)}
-                                className='py-4 hover:border-b cursor-pointer'>Our Services</li>
-                        </Link>
-                        <Link href='/blog'>
-                            <li
-                                onClick={() => setMenuOpen(false)}
-                                className='py-4 hover:border-b cursor-pointer'>Blog</li>
+                                className='py-4 hover:border-b cursor-pointer'>login</li>
                         </Link>
                     </ul>
                 </div>
