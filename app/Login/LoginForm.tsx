@@ -1,6 +1,8 @@
 "use client"
 import React from 'react'
 import { Formik, Field, Form, FormikHelpers } from 'formik';
+import { logIn, logOut } from '@/lib/features/auth-slice';
+import { UseDispatch, useDispatch } from 'react-redux';
 
 interface Values {
     username: string;
@@ -8,6 +10,7 @@ interface Values {
 }
 
 const LoginForm = () => {
+    const dispatch = useDispatch();
     return (
         <div className='w-[340px] lg:w-[500px] bg-[#fff] p-3'>
             <h1 className="text-2xl font-bold mb-3">Login</h1>
@@ -22,24 +25,25 @@ const LoginForm = () => {
                     { setSubmitting }: FormikHelpers<Values>
                 ) => {
                     setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
+                        //alert(JSON.stringify(values, null, 2));
+                        dispatch(logIn(values.username))
                         setSubmitting(false);
                     }, 500);
                 }}
 
             >
                 <Form>
-                    <div className="mb-3 w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 ">
-                        <Field className="form-control"
+                    <div className="mb-3 ">
+                        <Field className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 "
                             id="username"
                             name="username"
                             placeholder="Username"
                             aria-describedby="usernameHelp" />
                     </div>
 
-                    <div className="mb-3 w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                    <div className="mb-3 ">
                         <Field
-                            className="form-control"
+                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                             id="password"
                             name="password"
                             placeholder="Password"

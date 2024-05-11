@@ -1,9 +1,12 @@
+"use client"
 import React from 'react'
 import Head from 'next/head'
-import LoginForm from '@/components/LoginForm'
+import LoginForm from './LoginForm'
+import { useAppSelector } from '@/lib/store'
 
 
-const page = () => {
+const Page = () => {
+    const username = useAppSelector((state) => state.authReducer.value.username);
     return (
         <div className="w-full h-screen  flex items-center justify-center">
             <Head>
@@ -13,10 +16,11 @@ const page = () => {
             </Head>
             <main>
                 <LoginForm />
+                <h1>UserName: {username}</h1>
             </main>
         </div>
 
     )
 }
 
-export default page
+export default Page
